@@ -4,23 +4,25 @@ package textExcel;
 
 public class SpreadsheetLocation implements Location
 {
-    @Override
+    private String cellName = "";
+    
     public int getRow()
     {
-        // TODO Auto-generated method stub
-        return 0;
+        int rowNum = Integer.parseInt(cellName.substring(1));
+        return rowNum-1;
     }
 
+    
     @Override
     public int getCol()
     {
-        // TODO Auto-generated method stub
-        return 0;
+        int colNum = Character.toLowerCase(cellName.charAt(0));
+        return ((int)colNum - 'a');
     }
     
     public SpreadsheetLocation(String cellName)
     {
-        // TODO: Fill this out with your own code
+        this.cellName = cellName;
     }
 
 }

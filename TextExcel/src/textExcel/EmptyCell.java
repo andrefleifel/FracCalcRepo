@@ -1,12 +1,15 @@
 package textExcel;
 
-public class EmptyCell {
-	//text for spreadsheet cell display, must be exactly length 10
+public class EmptyCell implements Cell {
+
+	@Override
 	public String abbreviatedCellText() {
+		return "          ";
 	}
-	
-	// text for individual cell inspection, not truncated or padded
+
+	@Override
 	public String fullCellText() {
-		
+		return "";
 	}
+
 }
