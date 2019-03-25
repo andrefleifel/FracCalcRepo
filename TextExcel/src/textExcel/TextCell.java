@@ -1,27 +1,19 @@
 package textExcel;
 
 public class TextCell implements Cell{
-
-	private String word;
-	public TextCell(String word) {
-		this.word = word;
+	
+	private String contents; // HOLD ONLY THE LETTER NOT INCLUDING THE QUOTES
+	
+	public TextCell(String userinput) { //constructor for the TextCell and sets the contents to the userinput
+		contents = userinput; //sets the contents of the cell to the inputed string without the quotations
 	}
-@Override
-public String abbreviatedCellText() {
-	String cellText = word.substring(1,word.length()-1);
-
-	if(cellText.length() < 10) {
-		while(cellText.length() < 10) {
-			cellText += " ";
-		}
-		return cellText;
-	}else {
-		return (cellText.substring(0,10));
+	
+	public String fullCellText() { //returns the fullCellText including the quotations
+		return ("\"" + contents + "\""); //returns the full contents with quotations
 	}
-}
-
-@Override
-public String fullCellText() {
-	return (word);
+	
+	public String abbreviatedCellText() { //returns only the first 10 words including spaces
+		String tempcontents = contents + "          ";//ADD 10 SPACES AND JUST SUBSTRING TO 0-10, AND ALSO MAKE A TEMPORARY STRING FOR ABBREVIATED
+		return tempcontents.substring(0, 10);
 	}
 }

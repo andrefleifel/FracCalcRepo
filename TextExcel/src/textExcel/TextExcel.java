@@ -1,7 +1,5 @@
 package textExcel;
 import java.util.Scanner;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
 
 // Update this file with your own code.
 
@@ -10,18 +8,23 @@ public class TextExcel
 
 	public static void main(String[] args)
 	{
-		Scanner userInput = new Scanner (System.in); 
-		Spreadsheet s = new Spreadsheet();
-		Boolean done = false;
-		while (!done) {
-			String input = userInput.nextLine();
-			
-			if ( userInput.next().equals("quit")) {
-				done = true;
-			}else { 
-				System.out.println(s.processCommand(input));
-			}
-		}
+	    // Add your command loop here
+		Scanner userinput = new Scanner(System.in);
+    	String holder = ("");
+    	
+    	//Initialize spreadsheet
+    	Spreadsheet spreadsheet = new Spreadsheet();
+    	//TestsALL.Helper th = new TestsALL.Helper();
+		//System.out.println(th.getText());
+    	System.out.println("What location would you like");
+		holder = userinput.nextLine();
+		
+    	//loop until user input is "quit"
+    	while (!holder.toUpperCase().equals("QUIT")) {
+    		System.out.println(spreadsheet.processCommand(holder));
+    		System.out.println("What location would you like");
+    		holder = userinput.nextLine();
+    	}
+    	userinput.close();
 	}
-
 }
