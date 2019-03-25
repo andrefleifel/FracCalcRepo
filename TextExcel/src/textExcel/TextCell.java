@@ -23,5 +23,5 @@ public String abbreviatedCellText() {
 @Override
 public String fullCellText() {
 	return (word);
-}
+	}
 }

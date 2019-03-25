@@ -26,7 +26,7 @@ public class PercentCell extends RealCell{
 	@Override
 	public double getDoubleValue() {														//returns percent in decimal form
 		String percent = getRealCell().substring(0, getRealCell().length() - 1);
-		Double realPercent = Double.parseDouble(percent) / 100.0;
+		double realPercent = Double.parseDouble(percent) / 100.0;
 		return realPercent;
 	}
 
